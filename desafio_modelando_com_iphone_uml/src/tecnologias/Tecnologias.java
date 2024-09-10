@@ -7,7 +7,7 @@ import reprodutorMusical.ReprodutorMusical;
 import tecnologias.iphone_uml.Iphone_UML;
 import tecnologias.ipod.Ipod;
 
-public class Equipamentos {
+public class Tecnologias {
     public static void main(String[] args) {
         AparelhoEletronico iphoneT =new Iphone_UML();
         NavegadorInternet iphoneN = new Iphone_UML();
