@@ -14,23 +14,29 @@ public class Mercado {
     
     }
     public void removerItem(String nome){
-    List<CarrinhoDeCompras> remover_carrinho =new ArrayList<>();
-    for(CarrinhoDeCompras c : carrinho){
-        if(c.getNome().equalsIgnoreCase(nome)){
-            remover_carrinho.add(c);
-        }
+    if(carrinho.size()<1){
+         System.out.println("Não possui itens");
     }
-    carrinho.removeAll(remover_carrinho);
-    System.out.println("Removido "+nome+" com sucesso");
+    else{
+         List<CarrinhoDeCompras> remover_carrinho =new ArrayList<>();
+        for(CarrinhoDeCompras c : carrinho){
+            if(c.getNome().equalsIgnoreCase(nome)){
+                remover_carrinho.add(c);
+            }
+         }
+        carrinho.removeAll(remover_carrinho);
+        System.out.println("Removido "+nome+" com sucesso");
+    }
+   
     
   }
    public double calcularValorTotal(){
     double valores=0;
-    double aux;
-    int i=0;
+    if(carrinho.size()<1){
+         return 0;
+    }
     for(CarrinhoDeCompras c : carrinho){
-         aux=c.getPreco()*c.getQuantidade();
-         valores=valores + aux;
+         valores+=c.getPreco()*c.getQuantidade();
      }
     return valores;
    
